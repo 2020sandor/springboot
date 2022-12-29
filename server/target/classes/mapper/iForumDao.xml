@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--映射文件配置 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace命名空间，作用：对sql进行分类化管理 -->
+<mapper namespace="com.bkb.dao.IForumDao">
+    <select id="findPerForum" resultType="com.bkb.domain.Forum">
+        select *
+        from Forum
+        where forumId=#{forumId}
+    </select>
+
+    <insert id="PostPerForum"  >
+    INSERT INTO `bkb_forum`.`forum`( `title`, `content` ,`userId`)
+    VALUES ( #{title}, #{content},#{userId})
+    </insert>
+</mapper>
